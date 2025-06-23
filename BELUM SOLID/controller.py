@@ -6,11 +6,11 @@ def tambah_produk():
     print("")
     print(f"{'==== JENIS PRODUK ====':^40}")
     jenis = input("1.Roti Manis\n2.Croissant\n3.Butter Cookies\n4.Muffin\n\nProduk yang dipilih [1,2,3,4] : ")
-    nama = input("Nama Produk : ")
-    kode = input("Kode Produk : ")
-    bahan = input("Bahan Baku (pisahkan dengan koma) : ").split(',')
-    biaya = int(input("Biaya Produksi : "))
-    harga = int(input("Harga Jual : "))
+    nama = input("Nama Produk\t: ")
+    kode = input("Kode Produk\t: ")
+    bahan = input("Bahan Baku\t: ").split(',')
+    biaya = int(input("Biaya Produksi\t: "))
+    harga = int(input("Harga Jual\t: "))
 
     if jenis == "1":
         produk = RotiManis(nama, kode, bahan, biaya, harga)
@@ -35,11 +35,11 @@ def tampilkan_produk():
         p.tampilkan_produk()
 
 def estimasi_profit():
-    kode = input("Masukkan kode produk: ")
-    jumlah = int(input("Jumlah pcs yang akan diproduksi: "))
+    kode = input("Masukkan kode produk\t\t: ")
+    jumlah = int(input("Jumlah pcs yang akan diproduksi\t: "))
     for p in produk_list:
         if p.kode == kode:
-            print(f"Estimasi profit: Rp {p.estimasi_profit(jumlah)}")
+            print(f"Estimasi profit\t\t\t: Rp {p.estimasi_profit(jumlah)}")
             return
     print("Produk tidak ditemukan!")
 
@@ -47,7 +47,8 @@ def simulasi_produksi():
     kode = input("Masukkan kode produk: ")
     for p in produk_list:
         if p.kode == kode:
-            print(f"Simulasi produksi untuk {p.nama}:")
+            print("")
+            print(f"Simulasi Produksi {p.nama}:")
             p.produksi()
             return
     print("Produk tidak ditemukan!")

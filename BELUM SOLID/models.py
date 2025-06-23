@@ -8,7 +8,7 @@ class InterfaceProduksi (ABC):
     def pemanggangan(self): pass
 
     def pengembangan(self): pass
-    
+
     def topping(self): pass
 
 
@@ -82,6 +82,7 @@ class Croissant(ProdukRoti, InterfaceProduksi ):
         print(f"Biaya Produksi\t\t: Rp {self.biaya_produksi}")
         print(f"Harga Jual\t\t: Rp {self.harga_jual}")
         print(f"Estimasi Profit per unit: Rp {self.harga_jual - self.biaya_produksi}") 
+        print("")
        
 
 class ButterCookies(ProdukRoti, InterfaceProduksi ):
@@ -132,7 +133,7 @@ class Muffin(ProdukRoti, InterfaceProduksi ):
         print("Proses pemanggangan")
 
     def tampilkan_produk(self):
-        print("")
+        print("MUFFIN")
         print(f"Nama\t\t\t: {self.nama}")
         print(f"Kode Produk\t\t: {self.kode}")
         print(f"Bahan Baku\t\t: {','.join(self.bahan_baku)}")

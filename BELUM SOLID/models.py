@@ -36,13 +36,13 @@ class RotiManis(ProdukRoti, InterProduksi ):
         self.pemanggangan()
 
     def pengadonan(self):
-        print("Roti Manis: Proses pengadonan...")
+        print("Proses pengadonan")
 
     def pengembangan(self):
-        print("Roti Manis: Proses pengembangan...")
+        print("Proses pengembangan")
 
     def pemanggangan(self):
-        print("Roti Manis: Proses pemanggangan...")
+        print("Proses pemanggangan")
 
     def tampilkan_produk(self):
         print(f"{self.nama} ({self.kode}): Biaya {self.biaya_produksi}, Harga {self.harga_jual}, Bahan: {self.bahan_baku}")
@@ -58,13 +58,13 @@ class Croissant(ProdukRoti, InterProduksi ):
         self.pemanggangan()
 
     def pengadonan(self):
-        print("Croissant: Proses pengadonan...")
+        print("Proses pengadonan")
 
     def pengembangan(self):
-        print("Croissant: Proses pengembangan...")
+        print("Proses pengembangan")
 
     def pemanggangan(self):
-        print("Croissant: Proses pemanggangan...")
+        print("Proses pemanggangan")
 
     def tampilkan_produk(self):
         print(f"{self.nama} ({self.kode}): Biaya {self.biaya_produksi}, Harga {self.harga_jual}, Bahan: {self.bahan_baku}")
@@ -80,13 +80,13 @@ class ButterCookies(ProdukRoti, InterProduksi ):
         self.topping()
 
     def pengadonan(self):
-        print("Butter Cookies: Proses pengadonan...")
+        print("Proses pengadonan")
 
     def pemanggangan(self):
-        print("Butter Cookies: Proses pemanggangan...")
+        print("Proses pemanggangan")
 
     def topping(self):
-        print("Butter Cookies: Menambahkan topping...")
+        print("Menambahkan topping")
 
     def tampilkan_produk(self):
         print(f"{self.nama} ({self.kode}): Biaya {self.biaya_produksi}, Harga {self.harga_jual}, Bahan: {self.bahan_baku}")
@@ -102,13 +102,13 @@ class Muffin(ProdukRoti, InterProduksi ):
         self.pemanggangan()
 
     def pengadonan(self):
-        print("Muffin: Proses pengadonan...")
+        print("pengadonan")
 
     def pengembangan(self):
-        print("Muffin: Proses pengembangan...")
+        print("Proses pengembangan")
 
     def pemanggangan(self):
-        print("Muffin: Proses pemanggangan...")
+        print("Proses pemanggangan")
 
     def tampilkan_produk(self):
         print(f"{self.nama} ({self.kode}): Biaya {self.biaya_produksi}, Harga {self.harga_jual}, Bahan: {self.bahan_baku}")

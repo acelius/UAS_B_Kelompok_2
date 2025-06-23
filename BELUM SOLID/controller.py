@@ -3,7 +3,8 @@ from models import RotiManis, Croissant, Muffin, ButterCookies
 produk_list = []
 
 def tambah_produk():
-    jenis = input("Jenis Produk (1=Roti Manis, 2=Croissant, 3=Butter Cookies, 4=Muffin): ")
+    print(f"{'==== JENIS PRODUK ====':^40}")
+    jenis = input("1.Roti Manis\n2.Croissant\n3.Butter Cookies\n4.Muffin\nProduk yang dipilih : ")
     nama = input("Nama Produk: ")
     kode = input("Kode Produk: ")
     bahan = input("Bahan Baku (pisahkan dengan koma): ").split(',')

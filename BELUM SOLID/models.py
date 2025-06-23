@@ -117,11 +117,13 @@ class ButterCookies(ProdukRoti, InterfaceProduksi ):
 class Muffin(ProdukRoti, InterfaceProduksi ):
     def __init__(self, nama, kode, bahan_baku, biaya_produksi, harga_jual):
         super().__init__(nama, kode, bahan_baku, biaya_produksi, harga_jual)
+        
 
     def produksi(self):
         self.pengadonan()
         self.pengembangan()
         self.pemanggangan()
+        self.topping()
 
     def pengadonan(self):
         print("pengadonan")
@@ -132,6 +134,8 @@ class Muffin(ProdukRoti, InterfaceProduksi ):
     def pemanggangan(self):
         print("Proses pemanggangan")
 
+    def topping(self):
+        print("Menambahkan topping")
     def tampilkan_produk(self):
         print("MUFFIN")
         print(f"Nama\t\t\t: {self.nama}")

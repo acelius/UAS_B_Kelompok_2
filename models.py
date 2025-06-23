@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+# INTEFACE PRODUKSI
 class InPengadonan(ABC):
     @abstractmethod
     def pengadonan(self): 

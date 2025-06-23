@@ -1,16 +1,24 @@
 from abc import ABC, abstractmethod
 
-class InterfaceProduksi (ABC):
+class InPengadonan(ABC):
     @abstractmethod
-    def pengadonan(self): pass
+    def pengadonan(self): 
+        pass
 
+class InPemanggangan(ABC):
     @abstractmethod
-    def pemanggangan(self): pass
+    def pemanggangan(self): 
+        pass
 
-    def pengembangan(self): pass
+class InPengembangan(ABC):
+    @abstractmethod
+    def pengembangan(self):
+        pass
 
-    def topping(self): pass
-
+class InTopping(ABC):
+    @abstractmethod
+    def topping(self): 
+        pass
 
 class ProdukRoti(ABC):
     def __init__(self, nama, kode, bahan_baku, biaya_produksi, harga_jual):
@@ -24,13 +32,14 @@ class ProdukRoti(ABC):
         return (self.harga_jual - self.biaya_produksi) * jumlah
 
     @abstractmethod
-    def produksi(self): pass
+    def produksi(self): 
+        pass
 
-
-class RotiManis(ProdukRoti, InterfaceProduksi ):
-    def __init__(self, nama, kode, bahan_baku, biaya_produksi, harga_jual):
-        super().__init__(nama, kode, bahan_baku, biaya_produksi, harga_jual)
-
+    @abstractmethod
+    def tampilkan_produk():
+        pass
+    
+class RotiManis(ProdukRoti,InPengadonan,InPengembangan,InPemanggangan ):
     def produksi(self):
         self.pengadonan()
         self.pengembangan()
@@ -56,10 +65,7 @@ class RotiManis(ProdukRoti, InterfaceProduksi ):
         print("")
 
 
-class Croissant(ProdukRoti, InterfaceProduksi ):
-    def __init__(self, nama, kode, bahan_baku, biaya_produksi, harga_jual):
-        super().__init__(nama, kode, bahan_baku, biaya_produksi, harga_jual)
-
+class Croissant(ProdukRoti,InPengadonan,InPengembangan,InPemanggangan):
     def produksi(self):
         self.pengadonan()
         self.pengembangan()
@@ -85,10 +91,7 @@ class Croissant(ProdukRoti, InterfaceProduksi ):
         print("")
        
 
-class ButterCookies(ProdukRoti, InterfaceProduksi ):
-    def __init__(self, nama, kode, bahan_baku, biaya_produksi, harga_jual):
-        super().__init__(nama, kode, bahan_baku, biaya_produksi, harga_jual)
-
+class ButterCookies(ProdukRoti,InPengadonan,InPemanggangan,InTopping):
     def produksi(self):
         self.pengadonan()
         self.pemanggangan()
@@ -114,10 +117,7 @@ class ButterCookies(ProdukRoti, InterfaceProduksi ):
         print("")
 
 
-class Muffin(ProdukRoti, InterfaceProduksi ):
-    def __init__(self, nama, kode, bahan_baku, biaya_produksi, harga_jual):
-        super().__init__(nama, kode, bahan_baku, biaya_produksi, harga_jual)
-        
+class Muffin(ProdukRoti,InPengadonan,InPengembangan,InPemanggangan,InTopping):
 
     def produksi(self):
         self.pengadonan()
@@ -145,3 +145,18 @@ class Muffin(ProdukRoti, InterfaceProduksi ):
         print(f"Harga Jual\t\t: Rp {self.harga_jual}")
         print(f"Estimasi Profit per unit: Rp {self.harga_jual - self.biaya_produksi}")
         print("")
+
+
+
+def buat_produk(jenis, nama, kode, bahan, biaya, harga):
+    produk_map = {
+        "1": RotiManis,
+        "2": Croissant,
+        "3": ButterCookies,
+        "4": Muffin
+    }
+
+    produk_class = produk_map.get(jenis)
+    if not produk_class:
+        raise ValueError("Jenis produk tidak valid")
+    return produk_class(nama, kode, bahan, biaya, harga)

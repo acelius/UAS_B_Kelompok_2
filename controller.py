@@ -1,4 +1,5 @@
-from models import RotiManis, Croissant, Muffin, ButterCookies
+
+from models import buat_produk
 
 produk_list = []
 
@@ -12,19 +13,12 @@ def tambah_produk():
     biaya = int(input("Biaya Produksi\t: "))
     harga = int(input("Harga Jual\t: "))
 
-    if jenis == "1":
-        produk = RotiManis(nama, kode, bahan, biaya, harga)
-    elif jenis == "2":
-        produk = Croissant(nama, kode, bahan, biaya, harga)
-    elif jenis == "3":
-        produk = ButterCookies(nama, kode, bahan, biaya, harga)
-    elif jenis == "4":
-        produk = Muffin(nama, kode, bahan, biaya, harga)
-    else:
-        print("Jenis tidak valid")
-        return
-    produk_list.append(produk)
-    print("Produk berhasil ditambahkan!")
+    try:
+        produk = buat_produk(jenis, nama, kode, bahan, biaya, harga)
+        produk_list.append(produk)
+        print("Produk berhasil ditambahkan!")
+    except ValueError as e:
+        print("Produk gagal ditambahkan")
 
 def tampilkan_produk():
     if not produk_list:

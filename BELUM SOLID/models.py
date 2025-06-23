@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class InterProduksi (ABC):
+class InterfaceProduksi (ABC):
     @abstractmethod
     def pengadonan(self): pass
 
@@ -26,7 +26,7 @@ class ProdukRoti(ABC):
     def produksi(self): pass
 
 
-class RotiManis(ProdukRoti, InterProduksi ):
+class RotiManis(ProdukRoti, InterfaceProduksi ):
     def __init__(self, nama, kode, bahan_baku, biaya_produksi, harga_jual):
         super().__init__(nama, kode, bahan_baku, biaya_produksi, harga_jual)
 
@@ -45,10 +45,17 @@ class RotiManis(ProdukRoti, InterProduksi ):
         print("Proses pemanggangan")
 
     def tampilkan_produk(self):
-        print(f"{self.nama} ({self.kode}): Biaya {self.biaya_produksi}, Harga {self.harga_jual}, Bahan: {self.bahan_baku}")
+        print("ROTI MANIS")
+        print(f"Nama\t\t\t: {self.nama}")
+        print(f"Kode Produk\t\t: {self.kode}")
+        print(f"Bahan Baku\t\t: {','.join(self.bahan_baku)}")
+        print(f"Biaya Produksi\t\t: Rp {self.biaya_produksi}")
+        print(f"Harga Jual\t\t: Rp {self.harga_jual}")
+        print(f"Estimasi Profit per unit: Rp {self.harga_jual - self.biaya_produksi}")
+        print("")
 
 
-class Croissant(ProdukRoti, InterProduksi ):
+class Croissant(ProdukRoti, InterfaceProduksi ):
     def __init__(self, nama, kode, bahan_baku, biaya_produksi, harga_jual):
         super().__init__(nama, kode, bahan_baku, biaya_produksi, harga_jual)
 
@@ -67,10 +74,16 @@ class Croissant(ProdukRoti, InterProduksi ):
         print("Proses pemanggangan")
 
     def tampilkan_produk(self):
-        print(f"{self.nama} ({self.kode}): Biaya {self.biaya_produksi}, Harga {self.harga_jual}, Bahan: {self.bahan_baku}")
+        print("CROISSANT")
+        print(f"Nama\t\t\t: {self.nama}")
+        print(f"Kode Produk\t\t: {self.kode}")
+        print(f"Bahan Baku\t\t: {','.join(self.bahan_baku)}")
+        print(f"Biaya Produksi\t\t: Rp {self.biaya_produksi}")
+        print(f"Harga Jual\t\t: Rp {self.harga_jual}")
+        print(f"Estimasi Profit per unit: Rp {self.harga_jual - self.biaya_produksi}") 
+       
 
-
-class ButterCookies(ProdukRoti, InterProduksi ):
+class ButterCookies(ProdukRoti, InterfaceProduksi ):
     def __init__(self, nama, kode, bahan_baku, biaya_produksi, harga_jual):
         super().__init__(nama, kode, bahan_baku, biaya_produksi, harga_jual)
 
@@ -89,10 +102,17 @@ class ButterCookies(ProdukRoti, InterProduksi ):
         print("Menambahkan topping")
 
     def tampilkan_produk(self):
-        print(f"{self.nama} ({self.kode}): Biaya {self.biaya_produksi}, Harga {self.harga_jual}, Bahan: {self.bahan_baku}")
+        print("BUTTER COOKIES")
+        print(f"Nama\t\t\t: {self.nama}")
+        print(f"Kode Produk\t\t: {self.kode}")
+        print(f"Bahan Baku\t\t: {','.join(self.bahan_baku)}")
+        print(f"Biaya Produksi\t\t: Rp {self.biaya_produksi}")
+        print(f"Harga Jual\t\t: Rp {self.harga_jual}")
+        print(f"Estimasi Profit per unit: Rp {self.harga_jual - self.biaya_produksi}")
+        print("")
 
 
-class Muffin(ProdukRoti, InterProduksi ):
+class Muffin(ProdukRoti, InterfaceProduksi ):
     def __init__(self, nama, kode, bahan_baku, biaya_produksi, harga_jual):
         super().__init__(nama, kode, bahan_baku, biaya_produksi, harga_jual)
 
@@ -111,4 +131,11 @@ class Muffin(ProdukRoti, InterProduksi ):
         print("Proses pemanggangan")
 
     def tampilkan_produk(self):
-        print(f"{self.nama} ({self.kode}): Biaya {self.biaya_produksi}, Harga {self.harga_jual}, Bahan: {self.bahan_baku}")
+        print("MUFFIN")
+        print(f"Nama\t\t\t: {self.nama}")
+        print(f"Kode Produk\t\t: {self.kode}")
+        print(f"Bahan Baku\t\t: {','.join(self.bahan_baku)}")
+        print(f"Biaya Produksi\t\t: Rp {self.biaya_produksi}")
+        print(f"Harga Jual\t\t: Rp {self.harga_jual}")
+        print(f"Estimasi Profit per unit: Rp {self.harga_jual - self.biaya_produksi}")
+        print("")

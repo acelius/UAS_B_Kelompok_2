@@ -3,13 +3,14 @@ from models import RotiManis, Croissant, Muffin, ButterCookies
 produk_list = []
 
 def tambah_produk():
+    print("")
     print(f"{'==== JENIS PRODUK ====':^40}")
-    jenis = input("1.Roti Manis\n2.Croissant\n3.Butter Cookies\n4.Muffin\nProduk yang dipilih : ")
-    nama = input("Nama Produk: ")
-    kode = input("Kode Produk: ")
-    bahan = input("Bahan Baku (pisahkan dengan koma): ").split(',')
-    biaya = int(input("Biaya Produksi: "))
-    harga = int(input("Harga Jual: "))
+    jenis = input("1.Roti Manis\n2.Croissant\n3.Butter Cookies\n4.Muffin\n\nProduk yang dipilih [1,2,3,4] : ")
+    nama = input("Nama Produk : ")
+    kode = input("Kode Produk : ")
+    bahan = input("Bahan Baku (pisahkan dengan koma) : ").split(',')
+    biaya = int(input("Biaya Produksi : "))
+    harga = int(input("Harga Jual : "))
 
     if jenis == "1":
         produk = RotiManis(nama, kode, bahan, biaya, harga)
@@ -29,7 +30,7 @@ def tampilkan_produk():
     if not produk_list:
         print("Belum ada produk yang ditambahkan.")
         return
-    print("\n=== Daftar Produk ===")
+    print(f"{'==== DAFTAR PRODUK ====':^40}")
     for p in produk_list:
         p.tampilkan_produk()
 

@@ -5,7 +5,8 @@ import controller
 
 def main():
     while True:
-        print("\n=== Sistem Produksi Hanari Bakery ===")
+        print("")
+        print(f"{'==== SISTEM PRODUKSI HANARY BAKERY ====':^40}")
         print("1. Tambah Produk Baru")
         print("2. Tampilkan Semua Produk")
         print("3. Kalkulasi Estimasi Profit")

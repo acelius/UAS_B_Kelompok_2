@@ -1,4 +1,3 @@
-
 from models import buat_produk
 
 produk_list = []
